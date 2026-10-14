@@ -4,6 +4,7 @@ PSİKOLOG BERAT ÇINAR — WEB SİTESİ DEMO SÜRÜMÜ
 Bu klasör, sitenin sunucu ve veritabanı gerektirmeyen demo sürümüdür.
 
 CANLI DEMO: https://codeslh.github.io/psikologDemo/
+PANEL DEMOSU: https://codeslh.github.io/psikologDemo/yonetim/giris.html
 
 AÇMAK İÇİN
 - index.html dosyasına çift tıklayın; site tarayıcıda açılır.
@@ -17,9 +18,13 @@ DEMODA ÇALIŞANLAR
 - WhatsApp butonu, footer’daki WhatsApp randevu oluşturucu ve iletişim formu
   (mesajı WhatsApp’a hazırlar)
 
-DEMODA OLMAYANLAR
-- Yönetim paneli (blog/içerik/SEO düzenleme, iki adımlı doğrulama, e-posta).
-  Bunlar tam sürümde (Laravel + MySQL) bulunur.
+YÖNETİM PANELİ (GÖRSEL DEMO)
+- Sitenin altındaki “Yönetim paneli (demo)” bağlantısından ya da yonetim/giris.html
+  dosyasından açılır. Herhangi bir şifre ve 6 haneli kod ile girilebilir.
+- Tüm ekranlar gezilebilir: genel bakış, blog yazıları ve editör, sayfa bölümleri,
+  site içerikleri, SEO, hesap güvenliği (iki adımlı doğrulama), şifre değiştirme.
+- Demo olduğu için değişiklikler kaydedilmez; kaydetme, e-posta gönderimi ve
+  gerçek iki adımlı doğrulama tam sürümde (Laravel + MySQL) çalışır.
 
 NOTLAR
 - Metinler, fotoğraflar ve WhatsApp numarası örnektir; tam sürümde panelden değiştirilir.

@@ -968,3 +968,9 @@ a.dev-credit__name:hover { border-color: var(--sun); color: var(--sun); backgrou
 /* Yüzen WhatsApp butonu footer alt satırındaki öğelerin üstüne binmesin */
 .footer-bottom { padding-right: calc(var(--gutter) + 84px); }
 @media (max-width: 640px) { .footer-bottom { padding-bottom: 96px; padding-right: var(--gutter); } }
+
+/* Demo: panel bağlantısı */
+.demo-panel-link { margin-left: auto; padding: 6px 12px; border-radius: 999px; background: var(--sun); color: var(--ink); font-weight: 800; font-size: .8rem; }
+.demo-panel-link:hover { background: var(--cream); }
+.demo-panel-link + .dev-credit { margin-left: 18px; }
+@media (max-width: 640px) { .demo-panel-link { order: 2; margin-left: 0; } }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>İki adımlı doğrulama · Yönetim Paneli</title>
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
+    <link rel="stylesheet" href="../assets/css/admin.css?v=1791991832">
+</head>
+<body class="login">
+    <div class="login__art" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="">
+        <div class="login__quote">
+            <span>“</span>
+            <p>Bağımlılık bir irade zayıflığı değil, öğrenilmiş bir döngüdür. Döngüler anlaşıldığında kırılabilir; terapi, o döngüyü birlikte görünür kılıp...</p>
+        </div>
+    </div>
+    <main class="login__panel">
+        <div class="login__form" >
+            <img src="../assets/img/favicon.svg" alt="" width="56" height="56">
+            <h1>Bir adım kaldı.</h1>
+            <p class="muted">Google Authenticator uygulamanızdaki 6 haneli kodu girin.</p>
+            <div class="alert alert--ok">Demo: herhangi 6 rakam yazmanız yeterli.</div>
+
+                        
+            <form method="POST" action="../yonetim/dogrulama.html" data-otp-form>    <div data-otp-mode="code" >
+        <label class="input">
+            <span>Doğrulama kodu</span>
+            <input type="text" name="code" inputmode="numeric" pattern="[0-9 ]*" maxlength="7" autocomplete="one-time-code" autofocus class="input--otp" placeholder="000000" data-otp-input>
+        </label>
+    </div>
+    <div data-otp-mode="recovery"  hidden >
+        <label class="input">
+            <span>Kurtarma kodu</span>
+            <input type="text" name="recovery_code" maxlength="20" autocomplete="off" placeholder="XXXXX-XXXXX" class="input--otp input--otp-sm">
+        </label>
+    </div>
+    <button type="submit" class="abtn abtn--primary abtn--block">Doğrula ve giriş yap</button>
+    <button type="button" class="login__switch" data-otp-switch>Telefonuma erişemiyorum, kurtarma kodu kullan</button>
+    <a href="../yonetim/giris.html" class="login__back">← Girişe dön</a>
+</form>
+        </div>
+    </main>
+    <script src="../assets/js/admin.js?v=1791991963" defer></script>
+    <script src="../assets/js/admin-demo.js" defer></script>
+</body>
+</html>
