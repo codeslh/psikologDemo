@@ -1,0 +1,26 @@
+PSİKOLOG BERAT ÇINAR — WEB SİTESİ DEMO SÜRÜMÜ
+=============================================
+
+Bu klasör, sitenin sunucu ve veritabanı gerektirmeyen demo sürümüdür.
+
+AÇMAK İÇİN
+- index.html dosyasına çift tıklayın; site tarayıcıda açılır.
+- Ya da klasörün tamamını herhangi bir statik hostinge yükleyin
+  (Netlify Drop, GitHub Pages, Vercel, cPanel public_html vb.).
+
+DEMODA ÇALIŞANLAR
+- Ana sayfa, Hakkımda, Uzmanlık Alanları, Blog (4 örnek yazı), İletişim
+- Tüm animasyonlar ve etkileşimler: kumar döngüsü diyagramı, “tanıdık geliyor mu?”
+  seçici, dürtü/nefes egzersizi, öz değerlendirme listesi, blog filtre ve arama
+- WhatsApp butonu, footer’daki WhatsApp randevu oluşturucu ve iletişim formu
+  (mesajı WhatsApp’a hazırlar)
+
+DEMODA OLMAYANLAR
+- Yönetim paneli (blog/içerik/SEO düzenleme, iki adımlı doğrulama, e-posta).
+  Bunlar tam sürümde (Laravel + MySQL) bulunur.
+
+NOTLAR
+- Metinler, fotoğraflar ve WhatsApp numarası örnektir; tam sürümde panelden değiştirilir.
+- Fotoğraflar internetten yüklenir; çevrimdışıyken yerlerinde marka renklerinde
+  yedek görsel görünür.
+- Demo, arama motorlarında görünmeyecek şekilde ayarlanmıştır (noindex).
