@@ -3,6 +3,8 @@ PSİKOLOG BERAT ÇINAR — WEB SİTESİ DEMO SÜRÜMÜ
 
 Bu klasör, sitenin sunucu ve veritabanı gerektirmeyen demo sürümüdür.
 
+CANLI DEMO: https://codeslh.github.io/psikologDemo/
+
 AÇMAK İÇİN
 - index.html dosyasına çift tıklayın; site tarayıcıda açılır.
 - Ya da klasörün tamamını herhangi bir statik hostinge yükleyin
