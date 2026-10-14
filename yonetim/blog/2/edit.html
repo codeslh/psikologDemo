@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
         <link rel="stylesheet" href="../../../assets/vendor/quill/quill.snow.css">
-    <link rel="stylesheet" href="../../../assets/css/admin.css?v=1791991832">
+    <link rel="stylesheet" href="../../../assets/css/admin.css?v=1792005906">
 </head>
 <body class="admin">
     <aside class="side" data-side>
@@ -102,6 +102,23 @@
         </section>
 
         <section class="card">
+            <header class="card__head">
+                <h2>Video</h2>
+                <span class="muted small">İsteğe bağlı · yazının kapak görselinin altında gösterilir</span>
+            </header>
+            <label class="input">
+                <span>YouTube veya Vimeo bağlantısı</span>
+                <input type="url" name="video_url" value="" maxlength="255" placeholder="https://www.youtube.com/watch?v=… veya https://vimeo.com/…" data-video-url>
+                <small class="muted" data-video-hint></small>
+            </label>
+            <div class="input">
+                <span>ya da video dosyası yükleyin (MP4/WebM · en fazla 2 MB)</span>
+                                <input type="file" name="video" accept="video/mp4,video/webm" class="file-input">
+                <small class="muted">İkisi birden girilirse yüklenen dosya gösterilir. Ziyaretçi oynat butonuna basana kadar YouTube/Vimeo yüklenmez.</small>
+            </div>
+        </section>
+
+        <section class="card">
             <header class="card__head"><h2>SEO</h2></header>
             <div class="serp" aria-hidden="true">
                 <small data-serp-url>https://psikologberatcinar.com/blog/kayip-kovalama-bir-el-daha-neden-hic-bitmez</small>
@@ -130,7 +147,7 @@
             </label>
             <label class="input">
                 <span>Yayın tarihi</span>
-                <input type="datetime-local" name="published_at" value="2026-10-02T19:40">
+                <input type="datetime-local" name="published_at" value="2026-10-02T22:37">
             </label>
             <label class="input">
                 <span>Kategori</span>
@@ -162,7 +179,7 @@
     </div>
 
         <script src="../../../assets/vendor/quill/quill.js" defer></script>
-    <script src="../../../assets/js/admin.js?v=1791991963" defer></script>
+    <script src="../../../assets/js/admin.js?v=1792005906" defer></script>
     <script src="../../../assets/js/admin-demo.js" defer></script>
 </body>
 </html>

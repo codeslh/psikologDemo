@@ -12,6 +12,8 @@ AÇMAK İÇİN
   (Netlify Drop, GitHub Pages, Vercel, cPanel public_html vb.).
 
 DEMODA ÇALIŞANLAR
+- Video: Hakkımda sayfasında ve ilk blog yazısında örnek video oynatıcısı (demo videosu;
+  tam sürümde panelden YouTube/Vimeo bağlantısı ya da MP4/WebM dosyası eklenir)
 - Ana sayfa, Hakkımda, Uzmanlık Alanları, Blog (4 örnek yazı), İletişim
 - Tüm animasyonlar ve etkileşimler: kumar döngüsü diyagramı, “tanıdık geliyor mu?”
   seçici, dürtü/nefes egzersizi, öz değerlendirme listesi, blog filtre ve arama

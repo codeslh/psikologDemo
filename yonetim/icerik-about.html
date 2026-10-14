@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
-        <link rel="stylesheet" href="../assets/css/admin.css?v=1791991832">
+        <link rel="stylesheet" href="../assets/css/admin.css?v=1792005906">
 </head>
 <body class="admin">
     <aside class="side" data-side>
@@ -110,6 +110,33 @@ Mezuniyetin ardından ruh sağlığı projelerinde ve Türk Silahlı Kuvvetleri&
                             <span class="dropzone__hint">Değiştirmek için tıklayın</span>
                         </label>
                                             </div>
+                                                                                <label class="input">
+                        <span>Video başlığı</span>
+                        <input type="text" name="about_video_title" value="" maxlength="255" placeholder="Kısa bir tanışma">
+                    </label>
+                                                                                <label class="input input--full">
+                        <span>Video açıklaması</span>
+                        <textarea name="about_video_text" rows="4" maxlength="5000" placeholder="Terapi sürecinde neler yaptığımızı ve nasıl çalıştığımı birkaç dakikada anlatıyorum." data-autogrow></textarea>
+                    </label>
+                                                                                <label class="input input--full">
+                        <span>Video bağlantısı (YouTube veya Vimeo)</span>
+                        <input type="url" name="about_video_url" value="https://youtu.be/BeratCinar1" maxlength="255" placeholder="https://www.youtube.com/watch?v=… veya https://vimeo.com/…" data-video-url>
+                        <small class="muted" data-video-hint></small>
+                    </label>
+                                                                                                    <div class="input field-video">
+                        <span>ya da video dosyası yükleyin (MP4/WebM)</span>
+                                                <input type="file" name="about_video_file" accept="video/mp4,video/webm" class="file-input">
+                        <small class="muted">MP4 veya WebM · en fazla 2 MB. Yüklenen dosya, bağlantıdan önce gösterilir.</small>
+                    </div>
+                                                                                <div class="input field-image">
+                        <span>Video kapak görseli (isteğe bağlı)</span>
+                        <label class="dropzone" data-dropzone>
+                            <input type="file" name="about_video_poster" accept="image/jpeg,image/png,image/webp" data-preview-input>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="" data-preview>
+                            <span class="dropzone__hint">Değiştirmek için tıklayın</span>
+                        </label>
+                                                    <label class="check-line"><input type="checkbox" name="reset_about_video_poster" value="1"> Varsayılan görsele dön</label>
+                                            </div>
                                                                                 <div class="input field-image">
                         <span>İkincil görsel</span>
                         <label class="dropzone" data-dropzone>
@@ -138,7 +165,7 @@ Motivasyonel Görüşme Eğitimi" data-autogrow></textarea>
         </div>
     </div>
 
-        <script src="../assets/js/admin.js?v=1791991963" defer></script>
+        <script src="../assets/js/admin.js?v=1792005906" defer></script>
     <script src="../assets/js/admin-demo.js" defer></script>
 </body>
 </html>

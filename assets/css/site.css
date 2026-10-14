@@ -969,8 +969,41 @@ a.dev-credit__name:hover { border-color: var(--sun); color: var(--sun); backgrou
 .footer-bottom { padding-right: calc(var(--gutter) + 84px); }
 @media (max-width: 640px) { .footer-bottom { padding-bottom: 96px; padding-right: var(--gutter); } }
 
+/* --------------------------------------------------------------------------
+   Video oynatıcı
+   -------------------------------------------------------------------------- */
+.video-player { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: var(--ink); box-shadow: 0 40px 80px -40px rgba(14, 31, 27, .55); }
+.video-player video, .video-player__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+.video-player__facade { position: absolute; inset: 0; width: 100%; height: 100%; display: grid; place-items: center; color: var(--cream); overflow: hidden; }
+.video-player__facade img, .video-player__fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter .6s; }
+.video-player__fallback { background: radial-gradient(80% 80% at 20% 10%, rgba(232, 182, 91, .45), transparent 60%), linear-gradient(150deg, var(--moss), var(--ink)); }
+.video-player__facade::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 31, 27, .05), rgba(14, 31, 27, .55)); }
+.video-player__facade:hover img { transform: scale(1.04); filter: saturate(1.15); }
+.video-player__play { position: relative; z-index: 1; width: clamp(68px, 9vw, 104px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: var(--clay); color: var(--paper); box-shadow: 0 0 0 0 rgba(200, 100, 58, .5); animation: video-pulse 2.4s var(--ease) infinite; transition: transform .4s var(--ease), background .3s; }
+.video-player__play svg { width: 42%; margin-left: 6%; }
+.video-player__facade:hover .video-player__play { transform: scale(1.08); background: var(--sun); color: var(--ink); }
+.video-player__note { position: absolute; z-index: 1; left: 18px; bottom: 16px; font-size: .75rem; letter-spacing: .08em; padding: 5px 10px; border-radius: 999px; background: rgba(14, 31, 27, .55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+@keyframes video-pulse { 70% { box-shadow: 0 0 0 22px rgba(200, 100, 58, 0); } 100% { box-shadow: 0 0 0 0 rgba(200, 100, 58, 0); } }
+
+/* Blog yazısında video */
+.post__video { margin: clamp(30px, 5vw, 60px) auto 0; max-width: 1000px; padding: 0 var(--gutter); }
+
+/* Hakkımda: tanışma videosu */
+.about-video { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(30px, 6vw, 100px); align-items: center; padding: 0 var(--gutter) clamp(100px, 12vw, 160px); }
+.about-video__text p { color: var(--muted); max-width: 440px; margin-top: 1.2em; }
+@media (max-width: 860px) { .about-video { grid-template-columns: 1fr; } }
+
+/* Blog kartında video rozeti */
+.post-card__video { position: absolute; right: 16px; top: 16px; display: inline-flex; align-items: center; gap: 6px; padding: .4em .8em; border-radius: 999px; background: var(--clay); color: var(--paper); font-size: .72rem; font-weight: 800; letter-spacing: .04em; }
+.post-card__video svg { width: 10px; height: 10px; }
+
 /* Demo: panel bağlantısı */
 .demo-panel-link { margin-left: auto; padding: 6px 12px; border-radius: 999px; background: var(--sun); color: var(--ink); font-weight: 800; font-size: .8rem; }
 .demo-panel-link:hover { background: var(--cream); }
 .demo-panel-link + .dev-credit { margin-left: 18px; }
 @media (max-width: 640px) { .demo-panel-link { order: 2; margin-left: 0; } }
+
+/* Demo: video notu */
+.video-demo-note { position: absolute; z-index: 2; inset: 0; display: grid; place-content: center; gap: 8px; padding: 24px; text-align: center; background: rgba(14, 31, 27, .82); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: var(--cream); animation: pop .5s var(--ease); }
+.video-demo-note strong { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 2rem); font-weight: 400; color: var(--sun); }
+.video-demo-note span { max-width: 420px; margin: 0 auto; color: var(--sage); }

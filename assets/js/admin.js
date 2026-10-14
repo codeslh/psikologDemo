@@ -49,6 +49,23 @@
         });
     });
 
+    /* Video bağlantısı: anlık kontrol (asıl doğrulama sunucuda yapılır) */
+    const videoPattern = /^https?:\/\/(?:(?:www\.|m\.)?youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)[A-Za-z0-9_-]{11}|(?:www\.)?youtu\.be\/[A-Za-z0-9_-]{11}|(?:www\.|player\.)?vimeo\.com\/(?:video\/)?\d{6,12})/i;
+    $$('[data-video-url]').forEach((input) => {
+        const hint = input.parentElement.querySelector('[data-video-hint]');
+        const check = () => {
+            if (!hint) return;
+            const v = input.value.trim();
+            hint.className = 'muted small';
+            if (!v) { hint.textContent = ''; return; }
+            const ok = videoPattern.test(v);
+            hint.textContent = ok ? '✓ Geçerli video bağlantısı' : 'Bu bir YouTube veya Vimeo video bağlantısı gibi görünmüyor.';
+            hint.classList.add(ok ? 'is-ok' : 'is-bad');
+        };
+        input.addEventListener('input', check);
+        check();
+    });
+
     /* Filtre seçimi değişince gönder */
     $$('[data-autosubmit]').forEach((el) => el.addEventListener('change', () => el.form.submit()));
 

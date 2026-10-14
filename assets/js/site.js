@@ -768,6 +768,25 @@
     }
 
     /* ------------------------------------------------------------------
+       Video: tıklayınca yüklenen YouTube/Vimeo oynatıcı
+       ------------------------------------------------------------------ */
+    const allowedFrames = ['https://www.youtube-nocookie.com/embed/', 'https://player.vimeo.com/video/'];
+    $$('[data-video-embed]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const src = btn.dataset.videoEmbed || '';
+            if (!allowedFrames.some((p) => src.startsWith(p))) return;
+            const frame = doc.createElement('iframe');
+            frame.src = src;
+            frame.title = btn.dataset.videoTitle || 'Video';
+            frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+            frame.allowFullscreen = true;
+            frame.referrerPolicy = 'strict-origin-when-cross-origin';
+            frame.className = 'video-player__frame';
+            btn.replaceWith(frame);
+        });
+    });
+
+    /* ------------------------------------------------------------------
        Başlat
        ------------------------------------------------------------------ */
     root.classList.remove('no-js');
@@ -782,4 +801,17 @@
         a.href = a.getAttribute('href').split('__SAYFA_ADRESI__').join(encodeURIComponent(url));
     });
     document.querySelectorAll('[data-copy-link="__SAYFA_ADRESI__"]').forEach(function (b) { b.setAttribute('data-copy-link', url); });
+})();
+
+/* Demo: video oynatıcı — gerçek sürümde YouTube/Vimeo videosu ya da yüklenen dosya oynatılır */
+(function () {
+    document.querySelectorAll('[data-video-embed="demo"]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            if (btn.querySelector('.video-demo-note')) return;
+            var note = document.createElement('span');
+            note.className = 'video-demo-note';
+            note.innerHTML = '<strong>Demo video</strong><span>Tam sürümde panelden eklediğiniz YouTube/Vimeo videosu ya da yüklediğiniz video burada oynatılır.</span>';
+            btn.appendChild(note);
+        });
+    });
 })();

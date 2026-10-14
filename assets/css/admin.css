@@ -294,6 +294,13 @@ button { font: inherit; cursor: pointer; }
 .sep { border: 0; border-top: 1px solid var(--line); margin: 22px 0; }
 h3.label { display: block; margin: 0 0 10px; font-family: var(--sans); font-size: .8rem; }
 
+/* Video alanları */
+.video-preview { width: 100%; max-height: 260px; border-radius: 12px; background: #000; margin-bottom: 8px; }
+.file-input { padding: 10px; border: 1px dashed var(--line); border-radius: 12px; background: var(--paper); font: inherit; }
+[data-video-hint].is-ok { color: var(--ok); font-weight: 700; }
+[data-video-hint].is-bad { color: var(--danger); font-weight: 700; }
+.field-video { grid-column: 1 / -1; }
+
 /* Demo uyarı şeridi */
 .demo-bar { position: sticky; top: 0; z-index: 90; display: flex; gap: 12px; align-items: center; justify-content: center; padding: 9px 16px; background: #e8b65b; color: #0e1f1b; font-size: .85rem; text-align: center; }
 .demo-bar strong { padding: 2px 8px; border-radius: 6px; background: #0e1f1b; color: #e8b65b; letter-spacing: .1em; font-size: .72rem; }
