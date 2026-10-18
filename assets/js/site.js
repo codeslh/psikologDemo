@@ -22,9 +22,12 @@
 
     const waNumber = body.dataset.wa || '';
     const waLink = (text) => 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
+    // Yeni sekmede açar. "noopener" özelliği window.open'ın null döndürmesine yol açtığından
+    // opener bağlantısı elle kesilir; yalnızca açılır pencere engellenirse aynı sekmede gidilir.
     const openWhatsApp = (text) => {
-        const win = window.open(waLink(text), '_blank', 'noopener');
-        if (!win) window.location.href = waLink(text);
+        const win = window.open(waLink(text), '_blank');
+        if (win) win.opener = null;
+        else window.location.href = waLink(text);
     };
 
     /* ------------------------------------------------------------------
@@ -104,7 +107,7 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
 
     const startReveals = () => {
-        $$('[data-reveal], [data-split], .signature, [data-footer-giant]').forEach((el) => io.observe(el));
+        $$('[data-reveal], [data-split], .signature').forEach((el) => io.observe(el));
     };
 
     /* ------------------------------------------------------------------
@@ -385,35 +388,23 @@
     $$('[data-count]').forEach((el) => countIO.observe(el));
 
     /* ------------------------------------------------------------------
-       İmleci takip eden hizmet görseli
+       Üst menü: uzmanlık alanları açılır listesi (fare, klavye ve dokunmatik)
        ------------------------------------------------------------------ */
-    const hoverWrap = $('[data-hover-reveal]');
-    if (hoverWrap && finePointer) {
-        const reveal = $('.hover-reveal', hoverWrap);
-        const img = $('img', reveal);
-        const pos = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
-        let active = false, rot = 0;
-        $$('[data-hover-img]', hoverWrap).forEach((row) => {
-            row.addEventListener('mouseenter', () => {
-                img.src = row.dataset.hoverImg;
-                reveal.classList.add('is-visible');
-                active = true;
-            });
-            row.addEventListener('mouseleave', () => { reveal.classList.remove('is-visible'); active = false; });
+    $$('[data-nav-drop]').forEach((drop) => {
+        const trigger = $('.nav-inline__link', drop);
+        const set = (open) => { drop.classList.toggle('is-open', open); trigger.setAttribute('aria-expanded', String(open)); };
+        let timer;
+        drop.addEventListener('mouseenter', () => { clearTimeout(timer); set(true); });
+        drop.addEventListener('mouseleave', () => { timer = setTimeout(() => set(false), 120); });
+        drop.addEventListener('focusin', () => set(true));
+        drop.addEventListener('focusout', (e) => { if (!drop.contains(e.relatedTarget)) set(false); });
+        drop.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); trigger.focus(); } });
+        // Dokunmatik ekranda ilk dokunuş listeyi açar, ikinci dokunuş sayfaya gider
+        trigger.addEventListener('click', (e) => {
+            if (!finePointer && !drop.classList.contains('is-open')) { e.preventDefault(); set(true); }
         });
-        window.addEventListener('mousemove', (e) => { pos.x = e.clientX; pos.y = e.clientY; }, { passive: true });
-        const loop = () => {
-            const dx = pos.x - cur.x;
-            cur.x = lerp(cur.x, pos.x, 0.12);
-            cur.y = lerp(cur.y, pos.y, 0.12);
-            rot = lerp(rot, clamp(dx * 0.08, -14, 14), 0.1);
-            if (active || reveal.classList.contains('is-visible')) {
-                reveal.style.transform = `translate3d(${cur.x - 150}px, ${cur.y - 190}px, 0) rotate(${rot}deg)`;
-            }
-            requestAnimationFrame(loop);
-        };
-        loop();
-    }
+        document.addEventListener('click', (e) => { if (!drop.contains(e.target)) set(false); });
+    });
 
     /* ------------------------------------------------------------------
        Ruh hâli seçici
@@ -726,6 +717,38 @@
             if (!f.get('day') || !f.get('slot')) {
                 preview.classList.add('is-error');
                 preview.textContent = 'Lütfen bir gün ve zaman dilimi seçin.';
+                return;
+            }
+            openWhatsApp(compose());
+        });
+    }
+
+    /* WhatsApp: grup terapisi katılım isteği (veri sunucuya gönderilmez, mesaj WhatsApp'ta açılır) */
+    const groupForm = $('[data-group-form]');
+    if (groupForm) {
+        const preview = $('[data-group-preview]', groupForm);
+        const title = String(groupForm.dataset.groupTitle || '').slice(0, 150);
+        const date = String(groupForm.dataset.groupDate || '').slice(0, 80);
+        const compose = () => {
+            const f = new FormData(groupForm);
+            const name = String(f.get('name') || '').trim().slice(0, 60);
+            const parts = ['Merhaba' + (name ? ', ben ' + name : '') + '.'];
+            parts.push('"' + title + '" grup terapisi (' + date + ') hakkında yazıyorum.');
+            if (f.get('intent')) parts.push(String(f.get('intent')) + '.');
+            if (f.get('slot')) parts.push('Ön görüşme için uygun zamanım: ' + f.get('slot') + '.');
+            if (f.get('experience')) parts.push('Terapi deneyimim: ' + f.get('experience') + '.');
+            return parts.join(' ');
+        };
+        const show = () => { preview.classList.remove('is-error'); preview.textContent = '“' + compose() + '”'; };
+        groupForm.addEventListener('change', show);
+        groupForm.addEventListener('input', show);
+        groupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = String(new FormData(groupForm).get('name') || '').trim();
+            if (name.length < 2) {
+                preview.classList.add('is-error');
+                preview.textContent = 'Lütfen adınızı yazın.';
+                $('[name=name]', groupForm).focus();
                 return;
             }
             openWhatsApp(compose());

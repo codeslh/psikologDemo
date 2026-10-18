@@ -14,7 +14,10 @@ AÇMAK İÇİN
 DEMODA ÇALIŞANLAR
 - Video: Hakkımda sayfasında ve ilk blog yazısında örnek video oynatıcısı (demo videosu;
   tam sürümde panelden YouTube/Vimeo bağlantısı ya da MP4/WebM dosyası eklenir)
-- Ana sayfa, Hakkımda, Uzmanlık Alanları, Blog (4 örnek yazı), İletişim
+- Ana sayfa, Hakkımda, Uzmanlık Alanları, Grup Terapileri (2 örnek grup ve detay
+  sayfaları), Blog (4 örnek yazı), İletişim
+- Üst menüde uzmanlık alanlarının açılır listesi
+- Grup terapisi sayfalarındaki “Gruba katılmak istiyorum” formu (talebi WhatsApp’a hazırlar)
 - Tüm animasyonlar ve etkileşimler: kumar döngüsü diyagramı, “tanıdık geliyor mu?”
   seçici, dürtü/nefes egzersizi, öz değerlendirme listesi, blog filtre ve arama
 - WhatsApp butonu, footer’daki WhatsApp randevu oluşturucu ve iletişim formu
@@ -23,8 +26,10 @@ DEMODA ÇALIŞANLAR
 YÖNETİM PANELİ (GÖRSEL DEMO)
 - Sitenin altındaki “Yönetim paneli (demo)” bağlantısından ya da yonetim/giris.html
   dosyasından açılır. Herhangi bir şifre ve 6 haneli kod ile girilebilir.
-- Tüm ekranlar gezilebilir: genel bakış, blog yazıları ve editör, sayfa bölümleri,
-  site içerikleri, SEO, hesap güvenliği (iki adımlı doğrulama), şifre değiştirme.
+- Tüm ekranlar gezilebilir: genel bakış, uzmanlık alanları, grup terapileri (liste,
+  yeni grup, düzenleme), blog yazıları ve editör, sayfa bölümleri, site içerikleri
+  (logo dahil), SEO, hesap güvenliği (iki adımlı doğrulama, oturumlar), şifre
+  değiştirme ve kullanım kılavuzu (PDF indirilebilir).
 - Demo olduğu için değişiklikler kaydedilmez; kaydetme, e-posta gönderimi ve
   gerçek iki adımlı doğrulama tam sürümde (Laravel + MySQL) çalışır.
 

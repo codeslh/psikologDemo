@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
-        <link rel="stylesheet" href="../assets/css/admin.css?v=1792005906">
+        <link rel="stylesheet" href="../assets/css/admin.css?v=1792362274">
 </head>
 <body class="admin">
     <aside class="side" data-side>
@@ -30,6 +30,14 @@
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="currentColor"/></svg>
                     <span>Site İçerikleri</span>
                 </a>
+                            <a href="../yonetim/uzmanlik-alanlari.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7l11 5 9-4.09V17h2V7L12 2zm-7 11.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/></svg>
+                    <span>Uzmanlık Alanları</span>
+                </a>
+                            <a href="../yonetim/grup-terapileri.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/></svg>
+                    <span>Grup Terapileri</span>
+                </a>
                             <a href="../yonetim/bolumler.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v3H4zm0 5.5h16v3H4zM4 16h16v3H4z" fill="currentColor"/></svg>
                     <span>Sayfa Bölümleri</span>
@@ -41,6 +49,10 @@
                             <a href="../yonetim/guvenlik.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z" fill="currentColor"/></svg>
                     <span>Hesap Güvenliği</span>
+                </a>
+                            <a href="../yonetim/yardim.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14a4 4 0 0 0-4 4h2a2 2 0 1 1 4 0c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" fill="currentColor"/></svg>
+                    <span>Kullanım Kılavuzu</span>
                 </a>
                             <a href="../yonetim/sifre.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z" fill="currentColor"/></svg>
@@ -79,61 +91,70 @@
             <a href="../yonetim/icerik-general.html" class="is-active">Genel &amp; İletişim</a>
             <a href="../yonetim/icerik-home.html" class="">Ana Sayfa</a>
             <a href="../yonetim/icerik-about.html" class="">Hakkımda</a>
-            <a href="../yonetim/icerik-services.html" class="">Uzmanlık Alanları</a>
+            <a href="../yonetim/icerik-services.html" class="">Uzmanlık Sayfası</a>
+            <a href="../yonetim/icerik-groups.html" class="">Grup Terapileri Sayfası</a>
             <a href="../yonetim/icerik-contact.html" class="">İletişim &amp; Footer</a>
     </nav>
 
 <form method="POST" action="../yonetim/icerik/general.html" enctype="multipart/form-data" class="form">    <input type="hidden" name="_method" value="PUT">
     <section class="card">
         <div class="fields">
-                                                                <label class="input">
+                                                                <div class="input field-image field-image--logo">
+                        <span>Logo (isteğe bağlı)</span>
+                        <label class="dropzone" data-dropzone>
+                            <input type="file" name="logo_image" accept="image/jpeg,image/png,image/webp" data-preview-input>
+                            <img src="../assets/img/favicon.svg" alt="" data-preview>
+                            <span class="dropzone__hint">Değiştirmek için tıklayın</span>
+                        </label>
+                                                <small class="field-help">Üst menüde, alt bilgide ve sayfa geçişlerinde isminizin yanında görünen simge. Kare, şeffaf arka planlı PNG/WebP önerilir. Boşsa varsayılan ağaç simgesi kullanılır.</small>                    </div>
+                                                                                <label class="input">
                         <span>Site adı</span>
-                        <input type="text" name="site_name" value="" maxlength="255" placeholder="Psk. Berat Çınar">
-                    </label>
+                        <input type="text" name="site_name" value="" maxlength="60" data-counter="60" placeholder="Psk. Berat Çınar">
+                        <small class="field-help">Üst menüdeki logo yazısı, alt bilgi, portre altyazısı ve blog yazar adı.</small>                    </label>
                                                                                 <label class="input">
                         <span>Unvan</span>
-                        <input type="text" name="site_title" value="" maxlength="255" placeholder="Psikolog · Kumar &amp; Davranışsal Bağımlılık">
-                    </label>
+                        <input type="text" name="site_title" value="" maxlength="100" data-counter="100" placeholder="Psikolog · Kumar &amp; Davranışsal Bağımlılık">
+                        <small class="field-help">İsminizin altındaki küçük satır (menü, alt bilgi, portre altyazısı).</small>                    </label>
                                                                                 <label class="input">
                         <span>WhatsApp numarası (ülke koduyla, örn. 905xxxxxxxxx)</span>
-                        <input type="tel" name="whatsapp_number" value="" maxlength="255" placeholder="905000000000">
-                    </label>
+                        <input type="tel" name="whatsapp_number" value="" maxlength="20" data-counter="20" placeholder="905000000000">
+                        <small class="field-help">Sitedeki tüm “Randevu Al” ve WhatsApp düğmelerinin yazdığı numara. Ülke koduyla, boşluksuz: 905xxxxxxxxx</small>                    </label>
                                                                                 <label class="input">
                         <span>WhatsApp varsayılan mesajı</span>
-                        <input type="text" name="whatsapp_message" value="" maxlength="255" placeholder="Merhaba, randevu almak istiyorum.">
-                    </label>
+                        <input type="text" name="whatsapp_message" value="" maxlength="200" data-counter="200" placeholder="Merhaba, randevu almak istiyorum.">
+                        <small class="field-help">WhatsApp açıldığında mesaj kutusunda hazır gelen metin.</small>                    </label>
                                                                                 <label class="input">
                         <span>Telefon (görünen)</span>
-                        <input type="text" name="phone_display" value="" maxlength="255" placeholder="+90 500 000 00 00">
-                    </label>
+                        <input type="text" name="phone_display" value="" maxlength="30" data-counter="30" placeholder="+90 500 000 00 00">
+                        <small class="field-help">İletişim sayfasında yazı olarak görünen numara.</small>                    </label>
                                                                                 <label class="input">
                         <span>E-posta</span>
-                        <input type="email" name="email" value="" maxlength="255" placeholder="iletisim@psikologberatcinar.com">
-                    </label>
+                        <input type="email" name="email" value="" maxlength="190" data-counter="190" placeholder="iletisim@psikologberatcinar.com">
+                        <small class="field-help">İletişim sayfası, alt bilgi ve mobil menüdeki e-posta adresi.</small>                    </label>
                                                                                 <label class="input">
                         <span>Konum / görüşme şekli</span>
-                        <input type="text" name="location" value="" maxlength="255" placeholder="Online görüşme">
-                    </label>
+                        <input type="text" name="location" value="" maxlength="100" data-counter="100" placeholder="Online görüşme">
+                        <small class="field-help">İletişim fotoğrafındaki kart ve alt bilgi (örn. Online görüşme).</small>                    </label>
                                                                                 <label class="input">
                         <span>Çalışma saatleri</span>
-                        <input type="text" name="working_hours" value="" maxlength="255" placeholder="Pazartesi – Cumartesi · 10:00 – 21:00">
-                    </label>
+                        <input type="text" name="working_hours" value="" maxlength="100" data-counter="100" placeholder="Pazartesi – Cumartesi · 10:00 – 21:00">
+                        <small class="field-help">Ana sayfadaki “Bugün yeni randevu” kartı, iletişim kartı ve alt bilgi.</small>                    </label>
                                                                                 <label class="input">
                         <span>Instagram adresi</span>
-                        <input type="url" name="instagram_url" value="" maxlength="255" placeholder="https://www.instagram.com/psikologberatcinar">
-                    </label>
+                        <input type="url" name="instagram_url" value="" maxlength="255" data-counter="255" placeholder="https://www.instagram.com/psikologberatcinar">
+                        <small class="field-help">Alt bilgi, iletişim sayfası ve menüdeki Instagram bağlantısı. Boşsa gizlenir.</small>                    </label>
                                                                                 <label class="input">
                         <span>YouTube adresi</span>
-                        <input type="url" name="youtube_url" value="" maxlength="255" placeholder="">
-                    </label>
-                                                                                <div class="input field-image">
+                        <input type="url" name="youtube_url" value="" maxlength="255" data-counter="255" placeholder="">
+                        <small class="field-help">Doldurulursa alt bilgide ve menüde YouTube bağlantısı görünür.</small>                    </label>
+                                                                                <div class="input field-image ">
                         <span>Portre fotoğrafı</span>
                         <label class="dropzone" data-dropzone>
                             <input type="file" name="portrait_image" accept="image/jpeg,image/png,image/webp" data-preview-input>
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="" data-preview>
                             <span class="dropzone__hint">Değiştirmek için tıklayın</span>
                         </label>
-                                            </div>
+                                                <small class="field-help">Ana sayfadaki “Yaklaşımım” portresi ve blog yazılarındaki yazar fotoğrafı.</small>                    </div>
                                     </div>
         <p class="muted small">Boş bırakılan alanlarda gri renkte görünen varsayılan metin kullanılır. Metinler düz yazı olarak kaydedilir; HTML etiketleri temizlenir.</p>
     </section>

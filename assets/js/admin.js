@@ -16,10 +16,8 @@
     }
 
     /* Kırık görsel yedeği (ör. harici görsel erişilemezse) */
-    // Yedek görsel, bu betiğin konumuna göre çözülür (alt klasörde yayınlanan sitelerde de çalışır)
-    const self = document.querySelector('script[src*="assets/js/admin.js"]');
-    const placeholder = self ? new URL('../img/placeholder.svg', self.src).href : '/assets/img/placeholder.svg';
-    const fixImg = (img) => { if (img.getAttribute('src') && !img.src.endsWith(placeholder)) img.src = placeholder; };
+    const placeholder = new URL('../img/placeholder.svg', document.querySelector('script[src*="assets/js/admin.js"]').src).href;
+    const fixImg = (img) => { if (img.getAttribute('src') && img.src !== placeholder) img.src = placeholder; };
     document.addEventListener('error', (e) => { if (e.target.tagName === 'IMG') fixImg(e.target); }, true);
     $$('img').forEach((img) => { if (img.complete && img.naturalWidth === 0) fixImg(img); });
 

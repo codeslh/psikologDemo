@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
-        <link rel="stylesheet" href="../assets/css/admin.css?v=1792005906">
+        <link rel="stylesheet" href="../assets/css/admin.css?v=1792362274">
 </head>
 <body class="admin">
     <aside class="side" data-side>
@@ -30,6 +30,14 @@
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="currentColor"/></svg>
                     <span>Site İçerikleri</span>
                 </a>
+                            <a href="../yonetim/uzmanlik-alanlari.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7l11 5 9-4.09V17h2V7L12 2zm-7 11.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/></svg>
+                    <span>Uzmanlık Alanları</span>
+                </a>
+                            <a href="../yonetim/grup-terapileri.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/></svg>
+                    <span>Grup Terapileri</span>
+                </a>
                             <a href="../yonetim/bolumler.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v3H4zm0 5.5h16v3H4zM4 16h16v3H4z" fill="currentColor"/></svg>
                     <span>Sayfa Bölümleri</span>
@@ -41,6 +49,10 @@
                             <a href="../yonetim/guvenlik.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z" fill="currentColor"/></svg>
                     <span>Hesap Güvenliği</span>
+                </a>
+                            <a href="../yonetim/yardim.html" class="side__link ">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14a4 4 0 0 0-4 4h2a2 2 0 1 1 4 0c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" fill="currentColor"/></svg>
+                    <span>Kullanım Kılavuzu</span>
                 </a>
                             <a href="../yonetim/sifre.html" class="side__link ">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z" fill="currentColor"/></svg>
@@ -79,7 +91,8 @@
             <a href="../yonetim/icerik-general.html" class="">Genel &amp; İletişim</a>
             <a href="../yonetim/icerik-home.html" class="">Ana Sayfa</a>
             <a href="../yonetim/icerik-about.html" class="is-active">Hakkımda</a>
-            <a href="../yonetim/icerik-services.html" class="">Uzmanlık Alanları</a>
+            <a href="../yonetim/icerik-services.html" class="">Uzmanlık Sayfası</a>
+            <a href="../yonetim/icerik-groups.html" class="">Grup Terapileri Sayfası</a>
             <a href="../yonetim/icerik-contact.html" class="">İletişim &amp; Footer</a>
     </nav>
 
@@ -88,47 +101,47 @@
         <div class="fields">
                                                                 <label class="input">
                         <span>Başlık</span>
-                        <input type="text" name="about_title" value="" maxlength="255" placeholder="Merhaba, ben Berat.">
-                    </label>
+                        <input type="text" name="about_title" value="" maxlength="80" data-counter="80" placeholder="Merhaba, ben Berat.">
+                        <small class="field-help">Hakkımda sayfasının büyük başlığı.</small>                    </label>
                                                                                 <label class="input input--full">
                         <span>Öne çıkan paragraf</span>
-                        <textarea name="about_lead" rows="4" maxlength="5000" placeholder="Psikolog ve bağımlılık danışmanıyım. Kumar, bahis ve diğer davranışsal bağımlılıklarla mücadele eden ergen ve yetişkinlerle, ayrıca onların aileleriyle çalışıyorum." data-autogrow></textarea>
-                    </label>
+                        <textarea name="about_lead" rows="4" maxlength="600" data-counter="600" placeholder="Psikolog ve bağımlılık danışmanıyım. Kumar, bahis ve diğer davranışsal bağımlılıklarla mücadele eden ergen ve yetişkinlerle, ayrıca onların aileleriyle çalışıyorum." data-autogrow></textarea>
+                        <small class="field-help">Başlığın altındaki kısa tanıtım.</small>                    </label>
                                                                                 <label class="input input--full">
                         <span>Detaylı metin</span>
-                        <textarea name="about_body" rows="4" maxlength="5000" placeholder="2022 yılında Ege Üniversitesi Psikoloji Bölümü&#039;nden onur derecesiyle mezun oldum. Lisans tezimde madde bağımlılığı ile depresyon arasındaki ilişkiyi inceledim.
+                        <textarea name="about_body" rows="4" maxlength="5000" data-counter="5000" placeholder="2022 yılında Ege Üniversitesi Psikoloji Bölümü&#039;nden onur derecesiyle mezun oldum. Lisans tezimde madde bağımlılığı ile depresyon arasındaki ilişkiyi inceledim.
 
 Mezuniyetin ardından ruh sağlığı projelerinde ve Türk Silahlı Kuvvetleri&#039;nde psikolog olarak görev aldım. 2022&#039;den bu yana yetişkin ve ergenlere online psikolojik danışmanlık veriyorum.
 
 Çalışmalarımı çevrim içi bahis, spor bahisleri, casino ve slot oyunları başta olmak üzere kumar bağımlılığı ile riskli yatırım (trade) ve dijital oyun gibi davranışsal bağımlılıklar üzerine yoğunlaştırıyorum. Bağımlılığın yalnızca kişiyi değil aileyi de etkilediğini bildiğim için yakınlara yönelik danışmanlık da veriyorum." data-autogrow></textarea>
-                    </label>
-                                                                                <div class="input field-image">
+                        <small class="field-help">“Hikâyem” bölümündeki uzun yazı. Paragrafları boş bir satırla ayırın.</small>                    </label>
+                                                                                <div class="input field-image ">
                         <span>Ana görsel</span>
                         <label class="dropzone" data-dropzone>
                             <input type="file" name="about_image" accept="image/jpeg,image/png,image/webp" data-preview-input>
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="" data-preview>
                             <span class="dropzone__hint">Değiştirmek için tıklayın</span>
                         </label>
-                                            </div>
+                                                <small class="field-help">Hakkımda sayfasının üstündeki büyük görsel.</small>                    </div>
                                                                                 <label class="input">
                         <span>Video başlığı</span>
-                        <input type="text" name="about_video_title" value="" maxlength="255" placeholder="Kısa bir tanışma">
-                    </label>
+                        <input type="text" name="about_video_title" value="" maxlength="80" data-counter="80" placeholder="Kısa bir tanışma">
+                        <small class="field-help">Video bölümünün başlığı.</small>                    </label>
                                                                                 <label class="input input--full">
                         <span>Video açıklaması</span>
-                        <textarea name="about_video_text" rows="4" maxlength="5000" placeholder="Terapi sürecinde neler yaptığımızı ve nasıl çalıştığımı birkaç dakikada anlatıyorum." data-autogrow></textarea>
-                    </label>
+                        <textarea name="about_video_text" rows="4" maxlength="400" data-counter="400" placeholder="Terapi sürecinde neler yaptığımızı ve nasıl çalıştığımı birkaç dakikada anlatıyorum." data-autogrow></textarea>
+                        <small class="field-help">Video başlığının altındaki kısa metin.</small>                    </label>
                                                                                 <label class="input input--full">
                         <span>Video bağlantısı (YouTube veya Vimeo)</span>
                         <input type="url" name="about_video_url" value="https://youtu.be/BeratCinar1" maxlength="255" placeholder="https://www.youtube.com/watch?v=… veya https://vimeo.com/…" data-video-url>
                         <small class="muted" data-video-hint></small>
-                    </label>
+                        <small class="field-help">YouTube veya Vimeo adresi (önerilen). Video ve dosya ikisi de boşsa video bölümü gizlenir.</small>                    </label>
                                                                                                     <div class="input field-video">
                         <span>ya da video dosyası yükleyin (MP4/WebM)</span>
                                                 <input type="file" name="about_video_file" accept="video/mp4,video/webm" class="file-input">
                         <small class="muted">MP4 veya WebM · en fazla 2 MB. Yüklenen dosya, bağlantıdan önce gösterilir.</small>
-                    </div>
-                                                                                <div class="input field-image">
+                        <small class="field-help">Bağlantı yerine MP4/WebM dosyası yükleyebilirsiniz.</small>                    </div>
+                                                                                <div class="input field-image ">
                         <span>Video kapak görseli (isteğe bağlı)</span>
                         <label class="dropzone" data-dropzone>
                             <input type="file" name="about_video_poster" accept="image/jpeg,image/png,image/webp" data-preview-input>
@@ -136,23 +149,23 @@ Mezuniyetin ardından ruh sağlığı projelerinde ve Türk Silahlı Kuvvetleri&
                             <span class="dropzone__hint">Değiştirmek için tıklayın</span>
                         </label>
                                                     <label class="check-line"><input type="checkbox" name="reset_about_video_poster" value="1"> Varsayılan görsele dön</label>
-                                            </div>
-                                                                                <div class="input field-image">
+                                                <small class="field-help">Video oynatılmadan önce görünen kapak resmi.</small>                    </div>
+                                                                                <div class="input field-image ">
                         <span>İkincil görsel</span>
                         <label class="dropzone" data-dropzone>
                             <input type="file" name="about_image_2" accept="image/jpeg,image/png,image/webp" data-preview-input>
                             <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="" data-preview>
                             <span class="dropzone__hint">Değiştirmek için tıklayın</span>
                         </label>
-                                            </div>
+                                                <small class="field-help">“Hikâyem” fotoğrafı; ana sayfadaki “Terapi Yaklaşımları” ve “Sık Sorulanlar” görselleri.</small>                    </div>
                                                                                 <label class="input input--full">
                         <span>Eğitim &amp; sertifikalar (her satır bir madde)</span>
-                        <textarea name="education" rows="4" maxlength="5000" placeholder="Ege Üniversitesi · Psikoloji Lisans (Onur Derecesi), 2022
+                        <textarea name="education" rows="4" maxlength="2000" data-counter="2000" placeholder="Ege Üniversitesi · Psikoloji Lisans (Onur Derecesi), 2022
 Lisans tezi: Madde bağımlılığı ve depresyon ilişkisi
 Bağımlılık Psikolojisi Eğitimi
 Bilişsel Davranışçı Terapi Eğitimi
 Motivasyonel Görüşme Eğitimi" data-autogrow></textarea>
-                    </label>
+                        <small class="field-help">“Eğitim &amp; Sertifikalar” listesi. Her satır bir madde olur.</small>                    </label>
                                     </div>
         <p class="muted small">Boş bırakılan alanlarda gri renkte görünen varsayılan metin kullanılır. Metinler düz yazı olarak kaydedilir; HTML etiketleri temizlenir.</p>
     </section>

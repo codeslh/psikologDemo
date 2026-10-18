@@ -7,7 +7,7 @@
     <title>Giriş · Yönetim Paneli</title>
     <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300..800&display=swap">
-    <link rel="stylesheet" href="../assets/css/admin.css?v=1792005906">
+    <link rel="stylesheet" href="../assets/css/admin.css?v=1792362274">
 </head>
 <body class="login">
     <div class="login__art" aria-hidden="true">
@@ -37,12 +37,12 @@
         </span>
     </label>
     <p class="caps-warning" data-caps hidden>⇪ Caps Lock açık</p>
+    
+    <div class="hp" aria-hidden="true">
+        <label>Web sitesi <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
     <div class="login__row">
-        <label class="switch">
-            <input type="checkbox" name="remember" value="1">
-            <span class="switch__ui"></span>
-            <span>Beni hatırla</span>
-        </label>
+        <span class="muted small">30 dk işlem yapılmazsa oturum kapanır.</span>
         <a href="../yonetim/sifremi-unuttum.html" class="login__link">Şifremi unuttum</a>
     </div>
     <button type="submit" class="abtn abtn--primary abtn--block">Giriş yap</button>
