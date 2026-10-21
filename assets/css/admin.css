@@ -355,11 +355,3 @@ h3.label { display: block; margin: 0 0 10px; font-family: var(--sans); font-size
 .card__head--pad { padding: 18px 22px 0; margin-bottom: 12px; }
 .badge--warn { background: #fbe7d9; color: var(--clay); }
 .toolbar { align-items: center; }
-
-/* Demo uyarı şeridi */
-.demo-bar { position: sticky; top: 0; z-index: 90; display: flex; gap: 12px; align-items: center; justify-content: center; padding: 9px 16px; background: #e8b65b; color: #0e1f1b; font-size: .85rem; text-align: center; }
-.demo-bar strong { padding: 2px 8px; border-radius: 6px; background: #0e1f1b; color: #e8b65b; letter-spacing: .1em; font-size: .72rem; }
-body.has-demo-bar.admin { grid-template-rows: auto 1fr; }
-body.has-demo-bar.admin .demo-bar { grid-column: 1 / -1; }
-body.has-demo-bar.login .demo-bar { position: fixed; left: 0; right: 0; }
-body.has-demo-bar.admin .side { top: 37px; height: calc(100vh - 37px); }

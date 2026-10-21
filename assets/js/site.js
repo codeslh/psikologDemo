@@ -833,24 +833,11 @@
     runPreloader(startReveals);
 })();
 
-/* Demo: paylaşım bağlantılarını sayfanın gerçek adresiyle doldur */
+/* Paylaşım bağlantılarını sayfanın gerçek adresiyle doldur */
 (function () {
     var url = location.href.split('#')[0];
     document.querySelectorAll('a[href*="__SAYFA_ADRESI__"]').forEach(function (a) {
         a.href = a.getAttribute('href').split('__SAYFA_ADRESI__').join(encodeURIComponent(url));
     });
     document.querySelectorAll('[data-copy-link="__SAYFA_ADRESI__"]').forEach(function (b) { b.setAttribute('data-copy-link', url); });
-})();
-
-/* Demo: video oynatıcı — gerçek sürümde YouTube/Vimeo videosu ya da yüklenen dosya oynatılır */
-(function () {
-    document.querySelectorAll('[data-video-embed="demo"]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            if (btn.querySelector('.video-demo-note')) return;
-            var note = document.createElement('span');
-            note.className = 'video-demo-note';
-            note.innerHTML = '<strong>Demo video</strong><span>Tam sürümde panelden eklediğiniz YouTube/Vimeo videosu ya da yüklediğiniz video burada oynatılır.</span>';
-            btn.appendChild(note);
-        });
-    });
 })();
