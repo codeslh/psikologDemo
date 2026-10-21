@@ -222,6 +222,22 @@
         const showImg = (i) => imgs.forEach((img) => img.classList.toggle('is-active', img.dataset.menuImg === String(i)));
         showImg(0);
         $$('[data-menu-link]').forEach((link) => link.addEventListener('mouseenter', () => showImg(link.dataset.menuLink)));
+
+        // Uzmanlık alanları alt listesi: aç / kapat
+        $$('[data-menu-sub-toggle]').forEach((btn) => {
+            const sub = doc.getElementById(btn.getAttribute('aria-controls'));
+            if (!sub) return;
+            btn.addEventListener('click', () => {
+                const open = btn.getAttribute('aria-expanded') !== 'true';
+                btn.setAttribute('aria-expanded', String(open));
+                sub.classList.toggle('is-open', open);
+            });
+        });
+
+        // Aynı sayfadaki bir bölüme (#) giden bağlantıda menüyü kapat
+        $$('a', menu).forEach((a) => a.addEventListener('click', () => {
+            if (a.hash && a.pathname === location.pathname) closeMenu();
+        }));
     }
 
     /* ------------------------------------------------------------------

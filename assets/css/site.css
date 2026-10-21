@@ -315,10 +315,22 @@ body.menu-open .brand__text small { color: var(--sage); }
 .nav-drop__all { display: block; margin-top: 6px; padding: 10px 12px; border-top: 1px solid var(--line); font-size: .85rem; font-weight: 700; color: var(--clay); }
 .nav-drop__all:hover { color: var(--ink); }
 
-/* Mobil menüde uzmanlık alt listesi */
-.menu-sub { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 2px 0 10px 46px; }
-.menu-sub a { font-size: .85rem; color: rgba(246, 241, 232, .65); }
+/* Mobil menüde uzmanlık alt listesi (açılır-kapanır) */
+.menu-item__row { display: flex; align-items: center; gap: 12px; }
+.menu-sub-toggle { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-light); color: var(--cream); display: grid; place-items: center; opacity: 0; transition: opacity .5s, transform .45s var(--ease), background .3s, border-color .3s; }
+.menu-sub-toggle svg { width: 16px; height: 16px; }
+.menu-sub-toggle:hover { border-color: var(--sun); }
+.menu-sub-toggle[aria-expanded="true"] { transform: rotate(45deg); background: var(--clay); border-color: var(--clay); }
+body.menu-open .menu-sub-toggle { opacity: 1; transition-delay: .45s, 0s, 0s, 0s; }
+.menu-sub { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.menu-sub.is-open { grid-template-rows: 1fr; }
+.menu-sub__inner { min-height: 0; overflow: hidden; display: grid; padding-left: 46px; }
+.menu-sub__inner > :first-child { margin-top: 4px; }
+.menu-sub__inner > :last-child { margin-bottom: 14px; }
+.menu-sub a { display: block; padding: 7px 0; font-size: 1rem; color: rgba(246, 241, 232, .72); }
 .menu-sub a:hover { color: var(--sun); }
+.menu-sub a.menu-sub__all { color: var(--sun); font-weight: 700; font-size: .92rem; }
+.menu-cta { display: none; }
 
 /* Panelden yüklenen logo */
 .brand__mark--img { background: transparent; overflow: hidden; }
@@ -350,21 +362,11 @@ body.menu-open .menu-overlay__bg { clip-path: circle(150% at calc(100% - 60px) 4
 }
 .menu-link:hover .menu-link__text { color: var(--sun); font-style: italic; }
 body.menu-open .menu-link__text, body.menu-open .menu-link__no { transform: translateY(0); opacity: 1; }
-body.menu-open .menu-link:nth-of-type(1) * { transition-delay: .25s; }
-body.menu-open .menu-link:nth-of-type(2) * { transition-delay: .31s; }
-body.menu-open .menu-link:nth-of-type(3) * { transition-delay: .37s; }
-body.menu-open .menu-link:nth-of-type(4) * { transition-delay: .43s; }
-body.menu-open .menu-link:nth-of-type(5) * { transition-delay: .49s; }
-body.menu-open .menu-link:nth-of-type(6) * { transition-delay: .55s; }
+body.menu-open .menu-item .menu-link > * { transition-delay: calc(.25s + var(--i, 0) * .06s); }
 .menu-overlay__preview { position: absolute; right: var(--gutter); top: 50%; width: min(30vw, 380px); aspect-ratio: 3/4; transform: translateY(-50%); border-radius: var(--radius); overflow: hidden; opacity: 0; transition: opacity .6s .4s; }
 body.menu-open .menu-overlay__preview { opacity: 1; }
 .menu-overlay__preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(100% 0 0 0); transition: clip-path .8s var(--ease), transform 1.2s var(--ease); transform: scale(1.2); }
 .menu-overlay__preview img.is-active { clip-path: inset(0 0 0 0); transform: scale(1); }
-.menu-overlay__meta { position: relative; display: flex; gap: 48px; flex-wrap: wrap; border-top: 1px solid var(--line-light); padding-top: 24px; opacity: 0; transition: opacity .5s; }
-body.menu-open .menu-overlay__meta { opacity: 1; transition-delay: .6s; }
-.menu-overlay__meta div { display: grid; gap: 4px; }
-.menu-overlay__meta small { color: var(--sage); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
-.menu-overlay__meta a:hover { color: var(--sun); }
 
 @media (max-width: 1320px) {
     .nav-inline { display: none; }
@@ -382,7 +384,6 @@ body.menu-open .menu-overlay__meta { opacity: 1; transition-delay: .6s; }
     .brand__text small { display: none; }
     .menu-toggle__label { display: none; }
     .menu-overlay__preview { display: none; }
-    .menu-overlay__meta { gap: 20px; }
 }
 
 /* --------------------------------------------------------------------------
@@ -987,7 +988,6 @@ img[data-reveal="clip"].is-in { clip-path: inset(0 0 0 0 round var(--radius)); }
 
 /* Menü açıkken taşmaları ve yüzen butonu engelle */
 .menu-overlay { overflow: hidden; }
-.menu-overlay__meta a, .menu-overlay__meta span { overflow-wrap: anywhere; }
 body.menu-open .wa-float { opacity: 0; pointer-events: none; }
 .wa-float { transition: opacity .4s; }
 .menu-link__text { font-size: clamp(2.3rem, 10vw, 6.5rem); overflow-wrap: anywhere; }
@@ -1111,6 +1111,30 @@ a.dev-credit__name:hover .dev-credit__arrow { transform: translate(2px, -2px); }
 /* Ana sayfa: grup terapileri bölümü */
 .home-groups { padding: clamp(90px, 11vw, 160px) 0 0; }
 .home-groups .section-head--split { align-items: end; }
+
+/* --------------------------------------------------------------------------
+   Açılır menü (telefon, tablet ve küçük ekranlar: üst menü 1320px altında gizlenir)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1320px) {
+    /* Kaydırılan içerik üstteki logo satırının altına girmesin: menü başlığın altından başlar */
+    .menu-overlay { top: var(--header-h); display: flex; flex-direction: column; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: 6px var(--gutter) 28px; }
+    .menu-overlay > * { flex-shrink: 0; }
+    .menu-overlay__bg { position: fixed; }
+    .menu-overlay__preview { display: none; }
+    .menu-overlay__nav { flex: none; justify-content: flex-start; gap: 0; }
+    .menu-item { border-bottom: 1px solid var(--line-light); }
+    .menu-item:first-child { border-top: 1px solid var(--line-light); }
+    .menu-link { flex: 1; min-width: 0; align-items: center; gap: 14px; padding: 13px 0; }
+    .menu-link__no { flex: none; width: 22px; font-size: .72rem; letter-spacing: .04em; }
+    .menu-link__text { font-size: clamp(1.5rem, 5.2vw + .4rem, 2.4rem); line-height: 1.15; letter-spacing: -.02em; }
+    .menu-item.is-active .menu-link__text { color: var(--sun); font-style: italic; }
+    .menu-sub__inner { padding-left: 36px; }
+}
+@media (max-width: 640px) {
+    /* Telefonda üstteki "Randevu Al" gizli olduğu için menünün altında gösterilir */
+    .menu-cta { display: inline-flex; justify-content: center; width: 100%; margin-top: 22px; opacity: 0; transition: opacity .5s; }
+    body.menu-open .menu-cta { opacity: 1; transition-delay: .55s; }
+}
 
 /* Demo: panel bağlantısı */
 .demo-panel-link { margin-left: auto; padding: 6px 12px; border-radius: 999px; background: var(--sun); color: var(--ink); font-weight: 800; font-size: .8rem; }
